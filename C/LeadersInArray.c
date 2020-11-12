@@ -1,3 +1,4 @@
+// In Geeks for Geeks there isnot any option of C, So I make the C code for that problem
 #include <stdio.h>
 
 void print_leader(int arr[], int n);
