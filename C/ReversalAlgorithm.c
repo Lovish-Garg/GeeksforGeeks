@@ -46,7 +46,7 @@ void leftrotate(int arr[], int d, int n)
         
         reversing first two numbers result in 
         2 1 3 4
-        reversing first other numbers result in 
+        reversing other left numbers result in 
         2 1 4 3
         Then reversing the whole array result in 
         3 4 1 2
