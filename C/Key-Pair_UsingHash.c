@@ -1,3 +1,4 @@
+// This is C version of GFG problem Key-Pair
 #include <stdio.h>
 #include <stdbool.h>
 #define MAX 9999// because in question it was mentioned that max value of A[i] will be smaller tha 10 power 5
