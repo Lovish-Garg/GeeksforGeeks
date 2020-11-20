@@ -1,3 +1,4 @@
+// C version of GFG problem Key-Pair using Sorting and Two pointer Technique
 #include <stdio.h>
 #include <stdbool.h>
 #define MAX 9999// because in question it was mentioned that max value of A[i] will be smaller tha 10 power 5
@@ -29,8 +30,6 @@ int main(void)
     merge_sort(arr, 0, n - 1);
 
     get_sum(arr, n, num);
-    getchar();
-    getchar();
 }
 
 void merge_sort(int arr[], int l, int r)
