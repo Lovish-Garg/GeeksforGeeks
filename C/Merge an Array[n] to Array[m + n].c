@@ -48,14 +48,6 @@ void moveToEnd(int mPlusN[], int size)
         if (mPlusN[i] != NA) 
         { 
         mPlusN[j] = mPlusN[i]; 
-      
-      /*
-         if( i != j) , if this step isnot done then duplicates in array can be produced but ignoring this block will not produce any problem in final outut as the duplicates will be over-written. You can see the duplicates in After moving to end-> result.
-      */
-        if (i != j)
-        {
-            mPlusN[i] = NA;
-        }
 
         j--; 
     }
@@ -73,14 +65,13 @@ void merge(int mPlusN[], int N[], int n, int m)
         if ((i < (m + n) && mPlusN[i] <= N[j]) || (j == n))
         {
             mPlusN[k] = mPlusN[i];
-            k++;
             i++; 
         }
         else
         {
             mPlusN[k] = N[j];
-            k++;
             j++;
         }
+            k++;
     }
 }
