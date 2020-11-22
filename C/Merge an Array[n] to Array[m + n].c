@@ -8,7 +8,7 @@ void moveToEnd(int *ptr, int size);
 /*
 Here not any parameter means it can take any parameter otherwise it could be initialise as void print_arr(int, int);
 */
-void print_arr();
+void print_arr(int [], int);
 
 int main(void)
 {
@@ -28,7 +28,6 @@ int main(void)
     print_arr(mPlusN, m + n);
 
     printf("\n");
-
     return 0;
 }
 
