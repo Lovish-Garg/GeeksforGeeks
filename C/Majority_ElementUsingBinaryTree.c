@@ -65,17 +65,17 @@ int main(void)
     printf("Input number of elements in array: ");
     scanf("%d", &n);
 
-    int arr[n];
+    int num;
 
     for (int i = 0; i < n; i++)
     {
         printf("Input data for %d element: ", i);
-        scanf("%d", &arr[i]);
-        root = insert(root, arr[i], n);
+        scanf("%d", &num);
+        root = insert(root, num, n);
     }
     
     if (n == 1)
-        printf("\n%d is major element\n", arr[0]);    
+        printf("\n%d is major element\n", root->data);    
     else 
         printf("\nMajor element is %d\n", major_elem = (major_elem == INT_MIN) ? INT_MIN : major_elem);
 
