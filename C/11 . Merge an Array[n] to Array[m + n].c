@@ -43,10 +43,9 @@ void moveToEnd(int mPlusN[], int size)
   {
         if (mPlusN[i] != NA) 
         { 
-        mPlusN[j] = mPlusN[i]; 
-
-        j--; 
-    }
+            mPlusN[j] = mPlusN[i]; 
+            j--; 
+        }
   }
 } 
 

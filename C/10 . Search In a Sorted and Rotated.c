@@ -6,27 +6,32 @@ int main(void)
 {
     int t; 
     
+    printf("Testcases: ");
     scanf("%d", &t);
     
     while (t--)
     {
         int n;
 
-    scanf("%d", &n);
+        printf("Elements: ");
+        scanf("%d", &n);
 
-    int arr[n];
+        int arr[n];
 
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
+        printf("\nInput data in array->\n");
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        int key;
+        
+        printf("\nNumber: ");
+        scanf("%d", &key);
+
+        printf("\nPivot Element: %d index\n\n", bin_search(arr, 0, n - 1, key));
     }
-
-    int key;
-    
-    scanf("%d", &key);
-
-    printf("%d\n", bin_search(arr, 0, n - 1, key));
-    }
+    return 0;
 }
 
 int bin_search(int arr[], int l, int r, int key)

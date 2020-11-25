@@ -10,16 +10,20 @@ void print_arr(int arr[], int n, int arr2[n][2]);// print arr with the help of c
 int main(void)
 {
     int t;
+
+    printf("Testcases: ");
     scanf("%d", &t); // example 1
 
     while (t--)
     {
         int n;
 
+        printf("Elements: ");
         scanf("%d", &n);// Example 5 
 
         int arr[n];
 
+        printf("Input data in array->\n");
         for (int i = 0; i < n; i++)
         {
             scanf("%d", &arr[i]);// Input : 5 5 4 6 4 
@@ -28,12 +32,11 @@ int main(void)
         sort(arr, n);// sorter 
 
         int count[n][2];
-        // Initialse Variable-Length array to 0
         memset(count, 0, sizeof(count));
 
         for (int i = 0; i < n; i++)
         {
-            count[i][0] = i;
+            count[i][0] = i;// Storing index in case of any collision then we can compare index
             for (int j = 0; j < n; j++)
             {
                 if (arr[i] == arr[j])
@@ -43,9 +46,9 @@ int main(void)
             }
         }
 
-        printf("\n\n");
         sort2(n, count);
         print_arr(arr, n, count);
+
     }
     
 }
@@ -110,4 +113,5 @@ void print_arr(int arr[], int n, int arr2[n][2])
     {
         printf("%d ", arr[arr2[i][0]]);
     }
+    printf("\n\n");
 }

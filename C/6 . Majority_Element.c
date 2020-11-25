@@ -8,22 +8,28 @@ int main() {
 	//code
 	int t;
 	
+    printf("Testcases: ");
 	scanf("%d", &t);
 	
 	while (t--)
 	{
 	    int n;
+
+        printf("Elements: ");
 	    scanf("%d", &n);
 	    
 	    int arr[n];
 	    
+        printf("\nInput data in array->\n");
+
 	    for (int i = 0; i < n; i++)
 	    {
 	        scanf("%d", &arr[i]);
 	    }
 	    
-	    printf("%d\n", major_elem(arr, n));
+	    printf("%d\n\n", major_elem(arr, n));
 	}
+    
 	return 0;
 }
 
@@ -34,7 +40,7 @@ int major_elem(int arr[], int n)
 {
     qsort(arr, n, sizeof(int), cmpfunc);
     
-    int temp = arr[0], count = 1, max_elemen = -1, ele = 0, f1 = 0;
+    int temp = arr[0], count = 1, max_elemen = -1, element = 0, f1 = 0;
     
     for (int i = 1; i < n; i++)
     {
@@ -51,7 +57,7 @@ int major_elem(int arr[], int n)
         if (max_elemen < count)
         {
             max_elemen = count;
-            ele = arr[i];
+            element = arr[i];
             
             if (max_elemen > (n / 2))
             {
@@ -62,7 +68,7 @@ int major_elem(int arr[], int n)
     }
     l1:
     
-    return (f1 == 1) ? ele : -1;
+    return (f1 == 1) ? element : -1;
     
 }
 

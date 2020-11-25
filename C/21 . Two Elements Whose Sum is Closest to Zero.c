@@ -9,22 +9,30 @@ void merge(int arr[], int mid, int l, int r);
 
 int main(void)
 {
-	int n;
+	int t;
 
-	printf("Input number of elements:");
-	scanf("%d", &n);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-	int arr[n];
+    while (t--)
+    {
+    	int n;
 
-	for (int i = 0; i < n; i++)
-	{
-		printf("Input data for %d element: ", i + 1);
-		scanf("%d", &arr[i]);
-	}
-	
-	printf("\n%d\n", closestZero(arr, n));
-	
-	getchar();
+		printf("Input number of elements:");
+		scanf("%d", &n);
+
+		int arr[n];
+
+		printf("Input data in array->\n");
+		for (int i = 0; i < n; i++)
+		{
+			scanf("%d", &arr[i]);
+		}
+		
+		printf("Difference: %d\n\n", closestZero(arr, n));
+			
+    }
+	return 0;
 }
 
 int closestZero(int arr[], int n)

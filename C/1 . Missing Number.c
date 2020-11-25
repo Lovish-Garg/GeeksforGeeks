@@ -3,18 +3,21 @@
 
 int main() {
     
-    int t,n,x1,x2,elem;
-    
+    int t;
+    printf("Testcases: ");
 	scanf("%d",&t);
 	
 	while(t--)
 	{
-	    int i;
+	    int n;
 	    
-        x1=0,x2=0;
-	    
+	    printf("Elements: ");
         scanf("%d",&n);
 	    
+	    int x1 = 0 ,x2 = 0,elem, i;
+
+	    printf("\nInput data in array->\n");
+
         for(i=0;i<n-1;++i)
 	    {
 	        scanf("%d",&elem);
@@ -26,7 +29,7 @@ int main() {
         
         x1 = x1 ^ (i + 1);
         
-	    printf("%d\n",x1^x2);
+	    printf("%d\n\n",x1^x2);
 	}
 	return 0;
 }

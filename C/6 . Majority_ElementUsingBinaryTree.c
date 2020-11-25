@@ -59,25 +59,36 @@ void free_(node *root)
 
 int main(void)
 {
-    int n;
-    node *root = NULL;
+    int t;
 
-    printf("Input number of elements in array: ");
-    scanf("%d", &n);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-    int num;
-
-    for (int i = 0; i < n; i++)
+    while (t--)
     {
-        printf("Input data for %d element: ", i);
-        scanf("%d", &num);
-        root = insert(root, num, n);
-    }
-    
-    if (n == 1)
-        printf("\n%d is major element\n", root->data);    
-    else 
-        printf("\nMajor element is %d\n", major_elem = (major_elem == INT_MIN) ? INT_MIN : major_elem);
+        int n;
+        
+        node *root = NULL;
 
-    free_(root);
+        printf("Elements: ");
+        scanf("%d", &n);
+
+        int num;
+
+        printf("\nInput data in array->\n");
+
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &num);
+            root = insert(root, num, n);
+        }
+        
+        if (n == 1)
+            printf("\n%d is major element\n\n", root->data);    
+        else 
+            printf("\nMajor element is %d\n\n", major_elem = (major_elem == INT_MIN) ? INT_MIN : major_elem);
+
+        free_(root);
+    }
+    return 0;
 }

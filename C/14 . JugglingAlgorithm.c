@@ -5,28 +5,34 @@ void print_arr(int arr[], int n);
 void leftrotate(int arr[], int d, int n);
 
 int main() {
-	//code
-	int t;
-	scanf("%d", &t);
-	
-	while (t--)
-	{
-	    int n, d;
+    //code
+    int t;
 
-    scanf("%d%d", &n, &d);
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
+    printf("Testcases: ");
+    scanf("%d", &t);
+    
+    while (t--)
     {
-        scanf("%d", &arr[i]);
+        int n, d;
+
+        printf("Elements and Elements to shift: ");
+        scanf("%d%d", &n, &d);
+
+        int arr[n];
+
+        printf("Input data in array->\n");
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        leftrotate(arr, d, n);
+
+        printf("\nAfter rotation->\n");
+        print_arr(arr, n);
     }
 
-    leftrotate(arr, d, n);
-
-    print_arr(arr, n);
-	}
-	return 0;
+    return 0;
 }
 
 
@@ -73,5 +79,5 @@ void print_arr(int arr[], int n)
     {
         printf("%d ", arr[i]);
     }
-    printf("\n");
+    printf("\n\n");
 }

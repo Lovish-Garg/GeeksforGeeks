@@ -9,27 +9,38 @@ void merge(int arr[], int mid, int l, int r);
 
 int main(void)
 {   
-    int n;
+    int t;
 
-    printf("Input number of elements in array: ");
-    scanf("%d", &n);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
+    while (t--)
     {
-        printf("Input data for %d element: ", i);
-        scanf("%d", &arr[i]);
+        int n;
+
+        printf("Elements: ");
+        scanf("%d", &n);
+
+        int arr[n];
+
+        printf("\nInput data in array->\n");
+
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        int num;
+
+        printf("\nNumber: ");
+        scanf("%d", &num);
+
+        merge_sort(arr, 0, n - 1);
+
+        get_sum(arr, n, num);
     }
 
-    int num;
-
-    printf("\nInput the sum for two elements in array: ");
-    scanf("%d", &num);
-
-    merge_sort(arr, 0, n - 1);
-
-    get_sum(arr, n, num);
+    return 0;
 }
 
 void merge_sort(int arr[], int l, int r)
@@ -101,7 +112,7 @@ void get_sum(int arr[], int size, int x)
 
         if (sum == x)
         {
-            printf("\nThe sum of %d can be obtained by (%d, %d)\n", x, arr[left], arr[right]);
+            printf("\nThe sum of %d can be obtained by (%d, %d)\n\n", x, arr[left], arr[right]);
             return;
         }
         
@@ -111,5 +122,5 @@ void get_sum(int arr[], int size, int x)
         else 
             right--;
     }
-    printf("\n%d not found\n", x);// when we donot found any x as sum of 2 numbers in array
+    printf("\n%d not found\n\n", x);// when we donot found any x as sum of 2 numbers in array
 }

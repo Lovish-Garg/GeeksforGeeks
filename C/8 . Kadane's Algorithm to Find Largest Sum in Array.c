@@ -8,20 +8,30 @@ int sub_arr(int arr[], int n);
 
 int main(void)
 {
-    int n;
+    int t;
 
-    printf("Input the size of the array: ");
-    scanf("%d", &n);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
+    while (t--)
     {
-        printf("Input data for %d element: ", i + 1);
-        scanf("%d", &arr[i]);
-    }
+        int n;
 
-    printf("\nThe sum of largest subarray is %d\n", sub_arr(arr, n));
+        printf("Elements: ");
+        scanf("%d", &n);
+
+        int arr[n];
+
+        printf("\nInput data in array->\n");
+        
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        printf("\nSum: %d\n\n", sub_arr(arr, n));    
+    }
+    return 0;
 }
 
 int sub_arr(int arr[], int n)

@@ -5,20 +5,31 @@ void print_leader(int arr[], int n);
 
 int main(void)
 {
-    int n;
+    int t;
 
-    printf("Input size of the array: ");
-    scanf("%d", &n);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
+    while (t--)
     {
-        printf("Input data for %d element: ", i);
-        scanf("%d", &arr[i]);
+        int n;
+
+        printf("Elements: ");
+        scanf("%d", &n);
+
+        int arr[n];
+
+        printf("Input data in array->\n");
+
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        printf("\nLeader elements->\n");
+        print_leader(arr, n);    
     }
-    printf("\nLeader elements in array are-> ");
-    print_leader(arr, n);
+    
 }
 
 void print_leader(int arr[], int n)
@@ -32,5 +43,5 @@ void print_leader(int arr[], int n)
             max = arr[i];
         }
     }
-    printf("%d ", max);
+    printf("%d\n\n", max);
 }
