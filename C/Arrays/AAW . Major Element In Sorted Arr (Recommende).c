@@ -1,4 +1,4 @@
-// This program prints the majority Element but it cannot be accurate as it only checks the arr[n / 2 + 1] element but time complexity is O(1)
+// This program prints the majority Element 
 #include <stdio.h>
 
 int get_major(int [], int, int);
