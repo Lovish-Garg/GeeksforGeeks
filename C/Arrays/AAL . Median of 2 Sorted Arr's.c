@@ -1,4 +1,4 @@
-// This program is the C version of gfg problem and this program seperates the 0's and 1's form array in O(n) time complexity
+// This program is the C version of gfg problem O(n) time complexity
 #include <stdio.h>
 
 int get_mid(int [], int [], int);
@@ -36,8 +36,6 @@ int main(void)
         printf("\nMid: %d\n\n", get_mid(arr1, arr2, n));
     }
 
-    getchar();
-    getchar();
     return 0;
 }
 
