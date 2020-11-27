@@ -32,7 +32,7 @@ int main(void)
 
 		merge_sort(arr, 0, n - 1);
 
-		printf("Num : %d\n\n", arr[index - 1]);
+		printf("Num : %d\n\n", arr[index % n - 1]);
 	}
 	return 0;
 }
