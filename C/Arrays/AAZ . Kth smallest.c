@@ -5,36 +5,43 @@ void merge(int arr[], int, int l, int r);
 
 int main(void)
 {
-	int t;
+    int t;
 
-	printf("Testcases: ");
-	scanf("%d", &t);
+    printf("Testcases: ");
+    scanf("%d", &t);
 
-	while (t--)
-	{
-		int n;
+    while (t--)
+    {
+        int n;
 
-		printf("Elements: ");
-		scanf("%d", &n);
+        printf("Elements: ");
+        scanf("%d", &n);
 
-		int arr[n];
+        int arr[n];
 
-		printf("\nInput data in array->\n");
-		for (int i = 0; i < n; i++)
-		{
-			scanf("%d", &arr[i]);
-		}
+        printf("\nInput data in array->\n");
+        for (int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
 
-		int index;
+        int index;
 
-		printf("\nInput Index: ");
-		scanf("%d", &index);
+        printf("\nInput Index: ");
+        scanf("%d", &index);
 
-		merge_sort(arr, 0, n - 1);
+        index = index % n;
 
-		printf("Num : %d\n\n", arr[index % n - 1]);
-	}
-	return 0;
+        merge_sort(arr, 0, n - 1);
+
+        printf("\nSmallest %d->\n", index);
+
+        for (int i = index - 1; i >= 0; i--)
+            printf("%d ", arr[i]);
+
+        printf("\n\n");
+    }
+    return 0;
 }
 
 void merge_sort(int arr[], int l, int r)
