@@ -1,26 +1,32 @@
+// This program complete gfg Submition in 0.1 Execution time
 #include <stdio.h>
-#include <stdbool.h>
-
-#define R 6
-#define C 5
 
 int min(int a, int b, int c);
-void printMaxSubSquare(bool M[R][C]);
+int printMaxSubSquare(int R, int C, int M[R][C]);
 
-int main(void)
-{
-     bool M[R][C] = {{0, 1, 1, 0, 1},  
-                    {1, 1, 0, 1, 0},  
-                    {0, 1, 1, 1, 0}, 
-                    {1, 1, 1, 1, 0}, 
-                    {1, 1, 1, 1, 1}, 
-                    {0, 0, 0, 0, 0}}; 
-                  
-    printMaxSubSquare(M); 
-    getchar();  
+int main() {
+	//code
+	int t;
+    scanf("%d", &t);
+    
+    while (t--)
+    {
+        int R, C;
+        scanf("%d%d", &R, &C);
+        
+        int M[R][C];
+        
+        for (int i = 0; i < R; i++)
+            for (int j = 0; j < C; j++)
+                scanf("%d", &M[i][j]);
+                
+        
+        printf("%d\n", printMaxSubSquare(R, C, M));
+    }
+	return 0;
 }
 
-void printMaxSubSquare(bool M[R][C])
+int printMaxSubSquare(int R, int C, int M[R][C])
 {
     int S[R][C];
 
@@ -43,7 +49,7 @@ void printMaxSubSquare(bool M[R][C])
         }
     }
 
-    int max_s = S[0][0], max_i = 0, max_j = 0;
+    int max_s = S[0][0];
     
     for (int i = 0; i < R; i++)
     {
@@ -52,21 +58,10 @@ void printMaxSubSquare(bool M[R][C])
             if (max_s < S[i][j])
             {
                 max_s = S[i][j];
-                max_i = i;
-                max_j = j;
             }
         }
     }
-
-    printf("Maximum size Sub-Array->\n");
-    for (int i = max_i; i > max_i - max_s; i--)
-    {
-        for (int j = max_j; j > max_j - max_s; j--)
-        {
-            printf("%d ", M[i][j]);
-        }
-        printf("\n");
-    }
+    return max_s;
 }
 
 int min(int a, int b, int c)
