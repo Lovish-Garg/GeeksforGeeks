@@ -1,8 +1,3 @@
-/*
- The input should be n - 1 else I have handled case when the user input value more than n - 1 
- in print_repeating function but then the output may not be correct
- use this program as used on GFG website
-*/
 #include <stdio.h>
 #include <stdlib.h>
 
