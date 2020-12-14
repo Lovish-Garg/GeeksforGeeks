@@ -1,8 +1,6 @@
-// This program is C version of gfg problem Equilibrium index
 #include <stdio.h>
-#include <stdlib.h>
 
-void Equilibrian(int [], int);
+int equilibrium(int [], int);
 
 int main(void)
 {
@@ -21,39 +19,38 @@ int main(void)
 		int arr[n];
 
 		printf("\nInput data in array->\n");
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < n; ++i)
 			scanf("%d", &arr[i]);
 
-		Equilibrian(arr, n);
+		int check = equilibrium(arr, n);
+		
+		(check == -1) ? printf("\nThere is not any Equilibrium\n\n") : printf("\nIndex: %d\nEquilibrium: %d\n\n",arr[check], check);
 	}
 
-	getchar();
 	return 0;
 }
 
-void Equilibrian(int arr[], int n)
+int equilibrium(int arr[], int n)
 {
 	if (n == 1)
-	{
-		printf("\nEquilibrium: %d\n\n", 1);
-		return;
-	}
+		return 0;
 
-	int sum = 0, l_sum = 0;
+	int r_sum = 0;
 
 	for (int i = 0; i < n; i++)
-		sum += arr[i];
+		r_sum += arr[i];// after all iterations r_sum will get sum of whole array
 
-	for (int i= 0; i < n; i++)
+	int l_sum = 0;
+
+	for (int i = 0; i < n; i++)
 	{
-		sum -= arr[i];// in this way we are getting the sum of right side elements
+		r_sum -= arr[i];
 
-		if (l_sum == sum)
-		{
-			printf("\nEquilibrium: %d\n\n", i);
-			return;
-		}
+		if (r_sum == l_sum)
+			return i;
+
 		l_sum += arr[i];
 	}
-	printf("\nNo Equilibrium\n\n");// means we didnot find Equilibrium
+
+	return -1;
 }
