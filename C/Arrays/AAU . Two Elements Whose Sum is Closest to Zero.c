@@ -28,7 +28,7 @@ int main(void)
 		{
 			scanf("%d", &arr[i]);
 		}
-		
+		// 8195886037
 		printf("Difference: %d\n\n", closestZero(arr, n));
 			
     }

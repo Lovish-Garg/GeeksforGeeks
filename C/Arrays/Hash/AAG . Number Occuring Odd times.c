@@ -7,9 +7,8 @@ int get_odd(int arr[], int n, int max)
 	int hashtable[max + 1]; // here im costructing an array of max element + 1 size so that I can even store max element count
 	
 	
-	for (int i = 0; i <= max; i++)
-		hashtable[i] = 0;
-
+    memset(hashtable, 0, sizeof(hashtable));
+    
 	for (int i = 0; i < n; i++)
 		hashtable[arr[i]]++;
 

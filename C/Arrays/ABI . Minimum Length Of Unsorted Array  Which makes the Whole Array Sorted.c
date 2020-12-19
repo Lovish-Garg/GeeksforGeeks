@@ -26,7 +26,6 @@ int main(void)
 		print_index(arr, n);
 	}
 
-	getchar();
 	return 0;
 }
 

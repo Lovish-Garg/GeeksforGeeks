@@ -73,8 +73,9 @@ int get_consecutive(int arr[], int n)
 
 			count[arr[i] - min] = true;// else it means that we have found this number first time and we are marking this.
 		}
+		free(count);
 		return true;
 	}
-
+	free(count);
 	return false;
 }
