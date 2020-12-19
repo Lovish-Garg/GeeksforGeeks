@@ -33,6 +33,8 @@ int main(void)
 			scanf("%d", &arr[i]);
 		
 		nextGreater(arr, n);
+
+		printf("\n");
 	}
 	
 }
